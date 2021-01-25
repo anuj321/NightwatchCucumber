@@ -17,3 +17,9 @@ jobs:
       - run:
           name: Check current version of node
           command: node -v
+          name: Find current working directory
+          command: pwd
+          name: Find list of ocntents
+          command: ls
+          name: Install npm pakages
+          command:  npm install --save-dev nightwatch-api nightwatch cucumber chromedriver cucumber-pretty
