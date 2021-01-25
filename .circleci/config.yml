@@ -11,8 +11,7 @@ jobs:
       - checkout
       - run:
           name: "Update Node.js and npm"
-          command: |
-            sudo apt update | curl -sSL "https://nodejs.org/dist/v11.10.0/node-v11.10.0-linux-x64.tar.xz" | sudo tar --strip-components=2 -xJ -C /usr/local/bin/ node-v11.10.0-linux-x64/bin/node
+          command: sudo apt update | curl -sSL "https://nodejs.org/dist/v11.10.0/node-v11.10.0-linux-x64.tar.xz" | sudo tar --strip-components=2 -xJ -C /usr/local/bin/ node-v11.10.0-linux-x64/bin/node
             curl https://www.npmjs.com/install.sh | sudo bash
       - run:
           name: Check current version of node
@@ -20,12 +19,11 @@ jobs:
       - run:      
           name: Find current working directory
           command: pwd
-      -run:
+      - run:
           name: Installing chromedriver and assigning permissions to launch
-          command: sudo apt-get install unzip;
-wget -O /tmp/chromedriver.zip http://chromedriver.storage.googleapis.com/2.11/chromedriver_linux64.zip && sudo unzip /tmp/chromedriver.zip chromedriver -d /usr/local/bin/
+          command: sudo apt-get install unzip | wget -O /tmp/chromedriver.zip http://chromedriver.storage.googleapis.com/2.11/chromedriver_linux64.zip && sudo unzip /tmp/chromedriver.zip chromedriver -d /usr/local/bin/
       - run:          
-          name: Find list of ocntents
+          name: Find list of contents
           command: ls
       - run:          
           name: Install npm pakages
