@@ -14,9 +14,9 @@ Then(/^the global search bar exists$/, () => {
 });
 
 Then(/^enter product name as "([^"]*)" and click on Global search button$/, productname => {
-    client.setValue('input[id="twotabsearchtextbox"]', productname).click('input[id="nav-search-submit-button"]');
+    await client.setValue('input[id="twotabsearchtextbox"]', productname);
 });
 
 Then(/^first product listed should have price as "([^"]*)"$/, price => {   
-    return assert.containsText('div.s-result-item:nth-child(2) > div:nth-child(1) > span:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > a:nth-child(1) > span:nth-child(1) > span:nth-child(2) > span:nth-child(2)',price);
+    return client.click('input[id="nav-search-submit-button"]').assert.containsText('div.s-result-item:nth-child(2) > div:nth-child(1) > span:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > a:nth-child(1) > span:nth-child(1) > span:nth-child(2) > span:nth-child(2)',price);
 });
