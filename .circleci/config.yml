@@ -8,6 +8,13 @@ orbs:
 workflows:
   # Name the workflow "welcome"
   welcome:
+    triggers:
+    - schedule:
+        cron: "10 12 * * *"
+        filters:
+          branches:
+            only:
+              - master
     # Run the welcome/run job in its own container
     jobs:
       - welcome/run
