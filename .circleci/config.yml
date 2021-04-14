@@ -4,11 +4,11 @@ workflows:
   version: 2
   commit-workflow:
     jobs:
-      - build 53
+      - build 
   scheduled-workflow:
     triggers:
       - schedule:
-          cron: " 12 * * *"
+          cron: "54 12 * * *"
           filters:
             branches:
               only: master
