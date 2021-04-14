@@ -8,7 +8,7 @@ workflows:
   scheduled-workflow:
     triggers:
       - schedule:
-          cron: "10 14 * * *"
+          cron: "20 14 * * *"
           filters:
             branches:
               only: /.*/
