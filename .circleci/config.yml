@@ -8,10 +8,10 @@ workflows:
   scheduled-workflow:
     triggers:
       - schedule:
-          cron: "20 14 * * *"
+          cron: "23 14 * * *"
           filters:
             branches:
-              only: /.*/
+              only: master
 
     jobs:
       - build2
@@ -23,7 +23,7 @@ jobs:
     working_directory: ~/circleci-demo-workflows
     steps:
       - checkout
-      # Bundle install dependencies13
+      # Bundle install dependencies1
       - run: echo Build1
   build2:
     docker:
