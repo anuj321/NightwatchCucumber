@@ -8,13 +8,13 @@ workflows:
   scheduled-workflow:
     triggers:
       - schedule:
-          cron: "55 12 * * *"
+          cron: "58 12 * * *"
           filters:
             branches:
-              only: master
+              only: TestSchedule
 
     jobs:
-      - build
+      - build2
 jobs:
   build:
     docker:
@@ -24,4 +24,12 @@ jobs:
     steps:
       - checkout
       # Bundle install dependencies
-      - run: echo Test
+      - run: echo Build1
+  build2:
+    docker:
+      - image: circleci/ruby:2.4-node
+    working_directory: ~/circleci-demo-workflows
+    steps:
+      - checkout
+      # Bundle install dependencies
+      - run: echo Build2
