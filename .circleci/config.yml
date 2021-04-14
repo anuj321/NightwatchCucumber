@@ -8,10 +8,10 @@ workflows:
   scheduled-workflow:
     triggers:
       - schedule:
-          cron: "43 13 * * *"
+          cron: "15 14 * * *"
           filters:
             branches:
-              only: /.*/
+              only: master
 
     jobs:
       - build2
