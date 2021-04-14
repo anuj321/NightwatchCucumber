@@ -8,10 +8,10 @@ workflows:
   scheduled-workflow:
     triggers:
       - schedule:
-          cron: "58 12 * * *"
+          cron: "01 13 * * *"
           filters:
             branches:
-              only: TestSchedule
+              only: master
 
     jobs:
       - build2
